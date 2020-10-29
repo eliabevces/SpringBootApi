@@ -2,9 +2,12 @@ package com.example.demo.model;
 
 
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Activity {
@@ -15,6 +18,9 @@ public class Activity {
 	private String activityTitle;
 	private String activitysubtitle;
 	private int sla;
+	
+	@OneToMany(mappedBy = "activity") //bidirectinal relation
+    private List<Card> cards;
 	
 	
 	
@@ -46,6 +52,14 @@ public class Activity {
 		this.sla = sla;
 	}
 
+	public List<Card> getCards() {
+		return cards;
+	}
+
+	public void setCards(List<Card> cards) {
+		this.cards = cards;
+	}
+	
 	
 	
 }
