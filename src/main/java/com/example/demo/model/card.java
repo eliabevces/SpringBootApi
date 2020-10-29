@@ -5,55 +5,38 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 
 @Entity
 public class Card {
 	
 	@Id
 	@GeneratedValue
-	private Patient patient;
-	private HealthInsurance healthinsurance;
-	private Bill bill;
 	private int visitId;
+	
+//	@JoinColumn(name = "patient_id")
+//	private Patient patient;
+	
+//	@JoinColumn(name = "healthInsurance_id")
+//	private HealthInsurance healthinsurance;
+	
+//	@JoinColumn(name = "bill_id")
+//	private Bill bill;
 	private Date CreatedIn;
-	private Activity activity;
+	
+//	@JoinColumn(name = "activity_id")
+//	private Activity activity;
 
 
 
 
-	public Card(Patient patient, HealthInsurance healthinsurance, Bill bill, int visitId, Date createdIn,
-			Activity activity) {
-		this.patient = patient;
-		this.healthinsurance = healthinsurance;
-		this.bill = bill;
-		this.visitId = visitId;
-		CreatedIn = createdIn;
-		this.activity = activity;
-	}
 
-	public Patient getPatient() {
-		return patient;
-	}
 
-	public void setPatient(Patient patient) {
-		this.patient = patient;
-	}
 
-	public HealthInsurance getHealthinsurance() {
-		return healthinsurance;
-	}
+	public Card() {}
 
-	public void setHealthinsurance(HealthInsurance healthinsurance) {
-		this.healthinsurance = healthinsurance;
-	}
 
-	public Bill getBill() {
-		return bill;
-	}
 
-	public void setBill(Bill bill) {
-		this.bill = bill;
-	}
 
 	public int getVisitId() {
 		return visitId;
@@ -71,14 +54,7 @@ public class Card {
 		CreatedIn = createdIn;
 	}
 
-	public Activity getActivity() {
-		return activity;
-	}
 
-	public void setActivity(Activity activity) {
-		this.activity = activity;
-	}
-	
 	
 	
 	

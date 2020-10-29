@@ -13,10 +13,7 @@ public class HealthInsurance {
 	private String name;
 	
 	
-	public HealthInsurance(int healthInsuranceId, String name) {
-		this.healthInsuranceId = healthInsuranceId;
-		this.name = name;
-	}
+	public HealthInsurance() {}
 	public int getHealthInsuranceId() {
 		return healthInsuranceId;
 	}

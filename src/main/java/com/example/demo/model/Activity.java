@@ -11,7 +11,7 @@ public class Activity {
 	
 	@Id
 	@GeneratedValue
-	private  int activityid;
+	private int activityid;
 	private String activityTitle;
 	private String activitysubtitle;
 	private int sla;
@@ -19,13 +19,7 @@ public class Activity {
 	
 	
 	
-	public Activity(int activityid, String activityTitle, String activitysubtitle, int sla) {
-		super();
-		this.activityid = activityid;
-		this.activityTitle = activityTitle;
-		this.activitysubtitle = activitysubtitle;
-		this.sla = sla;
-	}
+	public Activity() {}
 	
 	public int getActivityid() {
 		return activityid;

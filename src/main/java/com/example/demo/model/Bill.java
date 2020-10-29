@@ -10,14 +10,12 @@ public class Bill {
 	@Id
 	@GeneratedValue
 	private int billid;
-	private String billtype;
-	private int totalamount;
 	
-	public Bill(int billid, String billtype, int totalamount) {
-		this.billid = billid;
-		this.billtype = billtype;
-		this.totalamount = totalamount;
-	}
+	private String billtype;
+	
+	private Float totalamount;
+	
+	public Bill() {}
 
 
 	
@@ -36,13 +34,13 @@ public class Bill {
 
 
 
-	public int getTotalamount() {
+	public Float getTotalamount() {
 		return totalamount;
 	}
 
 
 
-	public void setTotalamount(int totalamount) {
+	public void setTotalamount(Float totalamount) {
 		this.totalamount = totalamount;
 	}
 
