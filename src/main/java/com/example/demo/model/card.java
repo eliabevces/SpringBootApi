@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class card {
+public class Card {
 	
 	@Id
 	@GeneratedValue
@@ -21,7 +21,7 @@ public class card {
 
 
 
-	public card(Patient patient, HealthInsurance healthinsurance, Bill bill, int visitId, Date createdIn,
+	public Card(Patient patient, HealthInsurance healthinsurance, Bill bill, int visitId, Date createdIn,
 			Activity activity) {
 		this.patient = patient;
 		this.healthinsurance = healthinsurance;
