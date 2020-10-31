@@ -15,14 +15,21 @@ public class Patient {
 	@Id
 	@GeneratedValue
 	private int patientId;
+	
+	
 	private String name;
 	
     @OneToMany(mappedBy = "patient") //bidirectinal relation
     private List<Card> cards;
 	
+    
 	
 	
-	public Patient() {}
+	public Patient(String name) {
+		this.name = name;
+	}
+	
+	
 	public int getPatientId() {
 		return patientId;
 	}

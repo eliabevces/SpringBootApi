@@ -12,13 +12,18 @@ public class HealthInsurance {
 	
 	@Id
 	@GeneratedValue
-	private int healthInsuranceId;
-	private String name;
+	private int healthInsuranceId; // health insurance identifier
+	
+	private String name; // Health Insurance name
 	
 	@OneToMany(mappedBy = "healthinsurance") //bidirectinal relation
-    private List<Card> cards;
+    private List<Card> cards;	//Cards that belong to certain Health Insurance
 	
-	public HealthInsurance() {}
+	
+	
+	public HealthInsurance(String name) {
+		this.name = name;
+	}
 	public int getHealthInsuranceId() {
 		return healthInsuranceId;
 	}

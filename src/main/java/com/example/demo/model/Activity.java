@@ -14,18 +14,26 @@ public class Activity {
 	
 	@Id
 	@GeneratedValue
-	private int activityid;
-	private String activityTitle;
-	private String activitysubtitle;
-	private int sla;
+	private int activityid; // activity identifier
+	
+	private String activityTitle; // activity Title
+	
+	private String activitysubtitle; // Activity subtitle
+	
+	private int sla; //Maximum number of days that a card can stay in activity
 	
 	@OneToMany(mappedBy = "activity") //bidirectinal relation
     private List<Card> cards;
 	
 	
 	
+
 	
-	public Activity() {}
+	public Activity(String activityTitle, String activitysubtitle, int sla) {
+		this.activityTitle = activityTitle;
+		this.activitysubtitle = activitysubtitle;
+		this.sla = sla;
+	}
 	
 	public int getActivityid() {
 		return activityid;
