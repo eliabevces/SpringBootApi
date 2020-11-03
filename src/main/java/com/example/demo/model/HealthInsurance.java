@@ -20,6 +20,8 @@ public class HealthInsurance {
     private List<Card> cards;	//Cards that belong to certain Health Insurance
 	
 	
+	 
+	public HealthInsurance() {}
 	
 	public HealthInsurance(String name) {
 		this.name = name;

@@ -4,7 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -24,17 +23,17 @@ public class Card {
 	@GeneratedValue
 	private int visitId; //Card identifier
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@ManyToOne
 	@JsonIgnore
 	private Patient patient;	// Patient that the card belongs to
 	
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@ManyToOne
 	@JsonIgnore
 	@JoinColumn(name = "healthInsurance_id")
 	private HealthInsurance healthinsurance; // Card's Health insurance
 
-	@OneToOne(fetch = FetchType.LAZY, optional = false)
+	@OneToOne
 	@JsonIgnore
 	@JoinColumn(name = "bill_id")
 	private Bill bill;	// Card bill
@@ -44,10 +43,21 @@ public class Card {
     @Column(name = "created_at", nullable = false)
 	private Date CreatedIn;	// date that the card was created
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@ManyToOne
 	@JsonIgnore
 	@JoinColumn(name = "activity_id")
 	private Activity activity;	//Which activity the card belongs
+
+
+
+
+
+
+
+
+	public Card() {}
+
+
 
 
 
@@ -222,6 +232,21 @@ public class Card {
 
 
 
+
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "Card [visitId=" + visitId + ", patient=" + patient.getPatientId() + ", healthinsurance=" + healthinsurance + ", bill="
+				+ bill + ", CreatedIn=" + CreatedIn + ", activity=" + activity + "]";
+	}
+
+
+
+	
 
 	
 	

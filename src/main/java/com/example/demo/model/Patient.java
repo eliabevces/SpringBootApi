@@ -23,7 +23,7 @@ public class Patient {
     private List<Card> cards;
 	
     
-	
+    public Patient() {}
 	
 	public Patient(String name) {
 		this.name = name;

@@ -25,6 +25,9 @@ public class Bill {
 	
 
 	
+	
+	public Bill() {}
+
 	public Bill(String billtype, Double totalamount) {
 		this.billtype = billtype;
 		this.totalamount = totalamount;

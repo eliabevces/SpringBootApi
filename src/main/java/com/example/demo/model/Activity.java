@@ -29,6 +29,8 @@ public class Activity {
 	
 
 	
+	public Activity() {}
+
 	public Activity(String activityTitle, String activitysubtitle, int sla) {
 		this.activityTitle = activityTitle;
 		this.activitysubtitle = activitysubtitle;
