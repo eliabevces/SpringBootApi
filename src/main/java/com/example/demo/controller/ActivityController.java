@@ -26,11 +26,13 @@ public class ActivityController {
 	 
 	
 	@PostMapping(path="/createactivity")
-	public Activity CreateActivity(String activityTitle, String activitySubtitle, int sla) {
+	public void CreateActivity(String activityTitle, String activitySubtitle, int sla) {
 		Activity act = new Activity(activityTitle, activitySubtitle, sla);
 		ActivityRepository.save(act);
-		return act;
 	}
+	
+	
+	
 	
 	
 }

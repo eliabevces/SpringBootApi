@@ -1,7 +1,9 @@
 package com.example.demo.database;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -56,12 +58,70 @@ public class LoadDatabase {
 			 
 			 activityrepository.saveAll(activities);
 			 
-			 Card card1 = new Card(patient1,hi1,bill1,act2);
+			 HashMap<String,Boolean> cheklist1 = new HashMap<String, Boolean>();
+			 HashMap<String,Boolean> cheklist2 = new HashMap<String, Boolean>();
+			 HashMap<String,Boolean> cheklist3 = new HashMap<String, Boolean>();
 			 
-			 Card card2 = new Card(patient2,hi3,bill2,act2);
+			 
+			 cheklist1.put("check 1", false);
+			 cheklist1.put("check 2", false);
+			 cheklist1.put("check 3", false);
+			 cheklist1.put("check 4", false);
+			 
+			 cheklist2.put("check 1", true);
+			 cheklist2.put("check 2", true);
+			 cheklist2.put("check 3", true);
+			 cheklist2.put("check 4", true);
+			 
+			 cheklist3.put("check 1", true);
+			 cheklist3.put("check 2", true);
+			 cheklist3.put("check 3", true);
+			 cheklist3.put("check 4", false);
+			 
+			 HashMap<String,Boolean> documents1 = new HashMap<String, Boolean>();
+			 HashMap<String,Boolean> documents2 = new HashMap<String, Boolean>();
+			 HashMap<String,Boolean> documents3 = new HashMap<String, Boolean>();
+			 
+			 documents1.put("document 1", false);
+			 documents1.put("document 2", false);
+			 documents1.put("document 3", false);
+			 documents1.put("document 4", false);
+
+			 documents2.put("document 1", true);
+			 documents2.put("document 2", true);
+			 documents2.put("document 3", true);
+			 documents2.put("document 4", true);
+			 
+			 documents3.put("document 1", true);
+			 documents3.put("document 2", false);
+			 documents3.put("document 3", true);
+			 documents3.put("document 4", false);
+			 
+			 HashMap<String,Boolean> pendencies1 = new HashMap<String, Boolean>();
+			 HashMap<String,Boolean> pendencies2 = new HashMap<String, Boolean>();
+			 HashMap<String,Boolean> pendencies3 = new HashMap<String, Boolean>();
+			 
+			 pendencies1.put("pendency 1", true);
+			 pendencies1.put("pendency 2", true);
+			 pendencies1.put("pendency 3", true);
+			 pendencies1.put("pendency 4", true);
+
+			 pendencies2.put("pendency 1", false);
+			 pendencies2.put("pendency 2", true);
+			 pendencies2.put("pendency 3", true);
+			 pendencies2.put("pendency 4", false);
+			 
+			 pendencies3.put("pendency 1", false);
+			 pendencies3.put("pendency 2", false);
+			 pendencies3.put("pendency 3", false);
+			 pendencies3.put("pendency 4", false);
+			 
+			 Card card1 = new Card(patient1,hi1,bill1,act2,cheklist1,documents1,pendencies1);
+			 
+			 Card card2 = new Card(patient2,hi3,bill2,act2,cheklist2,documents2,pendencies2);
 
 			 
-			 Card card3 = new Card(patient1,hi1,bill3,act1);
+			 Card card3 = new Card(patient1,hi1,bill3,act1,cheklist3,documents3,pendencies3);
 
 			 
 			 

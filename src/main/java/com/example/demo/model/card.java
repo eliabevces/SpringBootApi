@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import java.util.Date;
+import java.util.HashMap;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -48,36 +49,29 @@ public class Card {
 	@JoinColumn(name = "activity_id")
 	private Activity activity;	//Which activity the card belongs
 
-
-
-
-
-
-
+	
+	private HashMap<String,Boolean> checklist; // Boolean indicates if its done and String is the description of the check item
+	
+	
+	private HashMap<String,Boolean> documents; // boolean indicates if the document was received and string is the description of the document 
+	
+	private HashMap<String,Boolean> pendencies;	// Boolean indicates if the pendency is done and String is the description of the pendency
+	
+	
 
 	public Card() {}
 
+	public Card(Patient patient, HealthInsurance healthinsurance, Bill bill, Activity activity,
+			HashMap<String,Boolean> checklist, HashMap<String,Boolean> documents,HashMap<String,Boolean> pendencies) {
 
-
-
-
-
-
-
-
-
-	public Card(Patient patient, HealthInsurance healthinsurance, Bill bill, Activity activity) {
 		this.patient = patient;
 		this.healthinsurance = healthinsurance;
 		this.bill = bill;
 		this.activity = activity;
+		this.checklist = checklist;
+		this.documents = documents;
+		this.pendencies = pendencies;
 	}
-
-
-
-
-
-
 
 
 
@@ -89,21 +83,9 @@ public class Card {
 
 
 
-
-
-
-
-
-
 	public void setVisitId(int visitId) {
 		this.visitId = visitId;
 	}
-
-
-
-
-
-
 
 
 
@@ -114,24 +96,9 @@ public class Card {
 
 
 
-
-
-
-
-
-
-
 	public void setPatient(Patient patient) {
 		this.patient = patient;
 	}
-
-
-
-
-
-
-
-
 
 
 	public HealthInsurance getHealthinsurance() {
@@ -140,50 +107,18 @@ public class Card {
 
 
 
-
-
-
-
-
-
-
 	public void setHealthinsurance(HealthInsurance healthinsurance) {
 		this.healthinsurance = healthinsurance;
 	}
-
-
-
-
-
-
-
-
-
 
 	public Bill getBill() {
 		return bill;
 	}
 
 
-
-
-
-
-
-
-
-
 	public void setBill(Bill bill) {
 		this.bill = bill;
 	}
-
-
-
-
-
-
-
-
 
 
 	public Date getCreatedIn() {
@@ -192,24 +127,9 @@ public class Card {
 
 
 
-
-
-
-
-
-
-
 	public void setCreatedIn(Date createdIn) {
 		CreatedIn = createdIn;
 	}
-
-
-
-
-
-
-
-
 
 
 	public Activity getActivity() {
@@ -217,26 +137,33 @@ public class Card {
 	}
 
 
-
-
-
-
-
-
-
-
 	public void setActivity(Activity activity) {
 		this.activity = activity;
 	}
 
+	public HashMap<String, Boolean> getChecklist() {
+		return checklist;
+	}
 
+	public void setChecklist(HashMap<String, Boolean> checklist) {
+		this.checklist = checklist;
+	}
 
+	public HashMap<String, Boolean> getDocuments() {
+		return documents;
+	}
 
+	public void setDocuments(HashMap<String, Boolean> documents) {
+		this.documents = documents;
+	}
 
+	public HashMap<String, Boolean> getPendencies() {
+		return pendencies;
+	}
 
-
-
-
+	public void setPendencies(HashMap<String, Boolean> pendencies) {
+		this.pendencies = pendencies;
+	}
 
 	@Override
 	public String toString() {
@@ -245,12 +172,4 @@ public class Card {
 	}
 
 
-
-	
-
-	
-	
-	
-	
-	
 }
