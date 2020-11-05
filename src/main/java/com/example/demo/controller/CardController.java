@@ -130,7 +130,7 @@ public class CardController {
 	            return new ResponseEntity<Object>(entities, HttpStatus.OK);
 	            
 	            
-			case "visitId ":
+			case "visitId":
 				int visitid = Integer.parseInt(qvalue); 
 				list = searchByVisitid(visitid, filter, page, perpage);
 				for(Card card : list) {
@@ -393,7 +393,6 @@ public class CardController {
 				}
 				return returncards;
 			default:
-				System.out.println("default activityid");
 				for(Card card : allcards){
 					Activity activitity = card.getActivity();
 					if(activitity.getActivityid() == activityid) {
