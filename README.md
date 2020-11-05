@@ -39,7 +39,7 @@
 
 ### Main endpoints
 - Get all activity (GET) : http://localhost:8080/activities
-		- Example Database returns:
+	- Example Database returns:
 		
 ``` json
 [
