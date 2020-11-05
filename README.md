@@ -43,185 +43,109 @@
 		
 ``` json
 [
-
-[
-
-{
-
-"activityid":  10,
-
-"activityTitle":  "Berçario",
-
-"activitysubtitle":  "Organizar Prontuario",
-
-"sla":  10,
-
-"cards":  [
-
-{
-
-"visitId":  15,
-
-"checklist":  {
-
-"check 4":  false,
-
-"check 2":  true,
-
-"check 3":  true,
-
-"check 1":  true
-
-},
-
-"documents":  {
-
-"document 1":  true,
-
-"document 2":  false,
-
-"document 3":  true,
-
-"document 4":  false
-
-},
-
-"pendencies":  {
-
-"pendency 1":  false,
-
-"pendency 2":  false,
-
-"pendency 3":  false,
-
-"pendency 4":  false
-
-},
-
-"createdIn":  "2020-11-05"
-
-}
-
-]
-
-},
-
-{
-
-"activityid":  11,
-
-"activityTitle":  "Auditoria",
-
-"activitysubtitle":  "Limpar Conta",
-
-"sla":  20,
-
-"cards":  [
-
-{
-
-"visitId":  14,
-
-"checklist":  {
-
-"check 4":  true,
-
-"check 2":  true,
-
-"check 3":  true,
-
-"check 1":  true
-
-},
-
-"documents":  {
-
-"document 1":  true,
-
-"document 2":  true,
-
-"document 3":  true,
-
-"document 4":  true
-
-},
-
-"pendencies":  {
-
-"pendency 1":  false,
-
-"pendency 2":  true,
-
-"pendency 3":  true,
-
-"pendency 4":  false
-
-},
-
-"createdIn":  "2020-11-05"
-
-}
-
-]
-
-},
-
-{
-
-"activityid":  12,
-
-"activityTitle":  "Centro Cirurgico",
-
-"activitysubtitle":  "organizar Prontuario",
-
-"sla":  2,
-
-"cards":  [
-
-{
-
-"visitId":  13,
-
-"checklist":  {
-
-"check 4":  false,
-
-"check 2":  false,
-
-"check 3":  false,
-
-"check 1":  false
-
-},
-
-"documents":  {
-
-"document 1":  false,
-
-"document 2":  false,
-
-"document 3":  false,
-
-"document 4":  false
-
-},
-
-"pendencies":  {
-
-"pendency 1":  true,
-
-"pendency 2":  true,
-
-"pendency 3":  true,
-
-"pendency 4":  true
-
-},
-
-"createdIn":  "2020-11-05"
-
-}
-
+   {
+      "activityid":10,
+      "activityTitle":"Berçario",
+      "activitysubtitle":"Organizar Prontuario",
+      "sla":10,
+      "cards":[
+         {
+            "visitId":15,
+            "checklist":{
+               "check 4":false,
+               "check 2":true,
+               "check 3":true,
+               "check 1":true
+            },
+            "documents":{
+               "document 1":true,
+               "document 2":false,
+               "document 3":true,
+               "document 4":false
+            },
+            "pendencies":{
+               "pendency 1":false,
+               "pendency 2":false,
+               "pendency 3":false,
+               "pendency 4":false
+            },
+            "createdIn":"2020-11-05"
+         }
+      ]
+   },
+   {
+      "activityid":11,
+      "activityTitle":"Auditoria",
+      "activitysubtitle":"Limpar Conta",
+      "sla":20,
+      "cards":[
+         {
+            "visitId":14,
+            "checklist":{
+               "check 4":true,
+               "check 2":true,
+               "check 3":true,
+               "check 1":true
+            },
+            "documents":{
+               "document 1":true,
+               "document 2":true,
+               "document 3":true,
+               "document 4":true
+            },
+            "pendencies":{
+               "pendency 1":false,
+               "pendency 2":true,
+               "pendency 3":true,
+               "pendency 4":false
+            },
+            "createdIn":"2020-11-05"
+         }
+      ]
+   },
+   {
+      "activityid":12,
+      "activityTitle":"Centro Cirurgico",
+      "activitysubtitle":"organizar Prontuario",
+      "sla":2,
+      "cards":[
+         {
+            "visitId":13,
+            "checklist":{
+               "check 4":false,
+               "check 2":false,
+               "check 3":false,
+               "check 1":false
+            },
+            "documents":{
+               "document 1":false,
+               "document 2":false,
+               "document 3":false,
+               "document 4":false
+            },
+            "pendencies":{
+               "pendency 1":true,
+               "pendency 2":true,
+               "pendency 3":true,
+               "pendency 4":true
+            },
+            "createdIn":"2020-11-05"
+         },
+         {
+            "visitId":17,
+            "checklist":{
+               
+            },
+            "documents":{
+               
+            },
+            "pendencies":{
+               
+            },
+            "createdIn":"2020-11-05"
+         }
+      ]
+   }
 ]
 ```
 
@@ -230,17 +154,13 @@
 	- Example Database returns after get:
 ``` json
 {
-
-"activityid":  16,
-
-"activityTitle":  "Atividade1",
-
-"activitysubtitle":  "subtitulo_da_atividade",
-
-"sla":  15,
-
-"cards":  []
-
+   "activityid":16,
+   "activityTitle":"Atividade1",
+   "activitysubtitle":"subtitulo_da_atividade",
+   "sla":15,
+   "cards":[
+      
+   ]
 }
 ```
 
@@ -249,289 +169,147 @@
 
 ``` json
 {
-
-"_embedded":  {
-
-"Cards":  [
-
-{
-
-"checklist":  {
-
-"check 4":  false,
-
-"check 2":  false,
-
-"check 3":  false,
-
-"check 1":  false
-
-},
-
-"documents":  {
-
-"document 1":  false,
-
-"document 2":  false,
-
-"document 3":  false,
-
-"document 4":  false
-
-},
-
-"pendencies":  {
-
-"pendency 1":  true,
-
-"pendency 2":  true,
-
-"pendency 3":  true,
-
-"pendency 4":  true
-
-},
-
-"createdIn":  "2020-11-05",
-
-"_links":  {
-
-"self":  {
-
-"href":  "http://localhost:8080/cards/13"
-
-},
-
-"card":  {
-
-"href":  "http://localhost:8080/cards/13"
-
-},
-
-"healthinsurance":  {
-
-"href":  "http://localhost:8080/cards/13/healthinsurance"
-
-},
-
-"bill":  {
-
-"href":  "http://localhost:8080/cards/13/bill"
-
-},
-
-"patient":  {
-
-"href":  "http://localhost:8080/cards/13/patient"
-
-},
-
-"activity":  {
-
-"href":  "http://localhost:8080/cards/13/activity"
-
-}
-
-}
-
-},
-
-{
-
-"checklist":  {
-
-"check 4":  true,
-
-"check 2":  true,
-
-"check 3":  true,
-
-"check 1":  true
-
-},
-
-"documents":  {
-
-"document 1":  true,
-
-"document 2":  true,
-
-"document 3":  true,
-
-"document 4":  true
-
-},
-
-"pendencies":  {
-
-"pendency 1":  false,
-
-"pendency 2":  true,
-
-"pendency 3":  true,
-
-"pendency 4":  false
-
-},
-
-"createdIn":  "2020-11-05",
-
-"_links":  {
-
-"self":  {
-
-"href":  "http://localhost:8080/cards/14"
-
-},
-
-"card":  {
-
-"href":  "http://localhost:8080/cards/14"
-
-},
-
-"healthinsurance":  {
-
-"href":  "http://localhost:8080/cards/14/healthinsurance"
-
-},
-
-"bill":  {
-
-"href":  "http://localhost:8080/cards/14/bill"
-
-},
-
-"patient":  {
-
-"href":  "http://localhost:8080/cards/14/patient"
-
-},
-
-"activity":  {
-
-"href":  "http://localhost:8080/cards/14/activity"
-
-}
-
-}
-
-},
-
-{
-
-"checklist":  {
-
-"check 4":  false,
-
-"check 2":  true,
-
-"check 3":  true,
-
-"check 1":  true
-
-},
-
-"documents":  {
-
-"document 1":  true,
-
-"document 2":  false,
-
-"document 3":  true,
-
-"document 4":  false
-
-},
-
-"pendencies":  {
-
-"pendency 1":  false,
-
-"pendency 2":  false,
-
-"pendency 3":  false,
-
-"pendency 4":  false
-
-},
-
-"createdIn":  "2020-11-05",
-
-"_links":  {
-
-"self":  {
-
-"href":  "http://localhost:8080/cards/15"
-
-},
-
-"card":  {
-
-"href":  "http://localhost:8080/cards/15"
-
-},
-
-"healthinsurance":  {
-
-"href":  "http://localhost:8080/cards/15/healthinsurance"
-
-},
-
-"bill":  {
-
-"href":  "http://localhost:8080/cards/15/bill"
-
-},
-
-"patient":  {
-
-"href":  "http://localhost:8080/cards/15/patient"
-
-},
-
-"activity":  {
-
-"href":  "http://localhost:8080/cards/15/activity"
-
-}
-
-}
-
-}
-
-]
-
-},
-
-"_links":  {
-
-"self":  {
-
-"href":  "http://localhost:8080/cards"
-
-},
-
-"profile":  {
-
-"href":  "http://localhost:8080/profile/cards"
-
-}
-
-},
-
-"page":  {
-
-"size":  20,
-
-"totalElements":  3,
-
-"totalPages":  1,
-
-"number":  0
-
-}
-
+   "_embedded":{
+      "Cards":[
+         {
+            "checklist":{
+               "check 4":false,
+               "check 2":false,
+               "check 3":false,
+               "check 1":false
+            },
+            "documents":{
+               "document 1":false,
+               "document 2":false,
+               "document 3":false,
+               "document 4":false
+            },
+            "pendencies":{
+               "pendency 1":true,
+               "pendency 2":true,
+               "pendency 3":true,
+               "pendency 4":true
+            },
+            "createdIn":"2020-11-05",
+            "_links":{
+               "self":{
+                  "href":"http://localhost:8080/cards/13"
+               },
+               "card":{
+                  "href":"http://localhost:8080/cards/13"
+               },
+               "activity":{
+                  "href":"http://localhost:8080/cards/13/activity"
+               },
+               "patient":{
+                  "href":"http://localhost:8080/cards/13/patient"
+               },
+               "healthinsurance":{
+                  "href":"http://localhost:8080/cards/13/healthinsurance"
+               },
+               "bill":{
+                  "href":"http://localhost:8080/cards/13/bill"
+               }
+            }
+         },
+         {
+            "checklist":{
+               "check 4":true,
+               "check 2":true,
+               "check 3":true,
+               "check 1":true
+            },
+            "documents":{
+               "document 1":true,
+               "document 2":true,
+               "document 3":true,
+               "document 4":true
+            },
+            "pendencies":{
+               "pendency 1":false,
+               "pendency 2":true,
+               "pendency 3":true,
+               "pendency 4":false
+            },
+            "createdIn":"2020-11-05",
+            "_links":{
+               "self":{
+                  "href":"http://localhost:8080/cards/14"
+               },
+               "card":{
+                  "href":"http://localhost:8080/cards/14"
+               },
+               "activity":{
+                  "href":"http://localhost:8080/cards/14/activity"
+               },
+               "patient":{
+                  "href":"http://localhost:8080/cards/14/patient"
+               },
+               "healthinsurance":{
+                  "href":"http://localhost:8080/cards/14/healthinsurance"
+               },
+               "bill":{
+                  "href":"http://localhost:8080/cards/14/bill"
+               }
+            }
+         },
+         {
+            "checklist":{
+               "check 4":false,
+               "check 2":true,
+               "check 3":true,
+               "check 1":true
+            },
+            "documents":{
+               "document 1":true,
+               "document 2":false,
+               "document 3":true,
+               "document 4":false
+            },
+            "pendencies":{
+               "pendency 1":false,
+               "pendency 2":false,
+               "pendency 3":false,
+               "pendency 4":false
+            },
+            "createdIn":"2020-11-05",
+            "_links":{
+               "self":{
+                  "href":"http://localhost:8080/cards/15"
+               },
+               "card":{
+                  "href":"http://localhost:8080/cards/15"
+               },
+               "activity":{
+                  "href":"http://localhost:8080/cards/15/activity"
+               },
+               "patient":{
+                  "href":"http://localhost:8080/cards/15/patient"
+               },
+               "healthinsurance":{
+                  "href":"http://localhost:8080/cards/15/healthinsurance"
+               },
+               "bill":{
+                  "href":"http://localhost:8080/cards/15/bill"
+               }
+            }
+         }
+      ]
+   },
+   "_links":{
+      "self":{
+         "href":"http://localhost:8080/cards"
+      },
+      "profile":{
+         "href":"http://localhost:8080/profile/cards"
+      }
+   },
+   "page":{
+      "size":20,
+      "totalElements":3,
+      "totalPages":1,
+      "number":0
+   }
 }
 ```
 
@@ -540,73 +318,39 @@
 	- Example returns:
 ``` json
 [
-
-{
-
-"card 15":  {
-
-"daysSinceCreated":  0,
-
-"slaStatus":  "OK",
-
-"patientid":  1,
-
-"patientname":  "Patient1",
-
-"healthInsuranceid":  4,
-
-"healthInsuranceName":  "Unimed",
-
-"visitId":  15,
-
-"billid":  9,
-
-"billtype":  "Hospitalar",
-
-"totalAmount":  50000.0,
-
-"numberOfPendencies":  4,
-
-"numberOfOpenPendencies":  4,
-
-"numberOfDocuments":  4,
-
-"numberOfNotReceivedDocuments":  2,
-
-"numberOfChecklistItem":  4,
-
-"numberOfDoneChecklistItem":  3
-
-}
-
-},
-
-{
-
-"totalCardsOk":  1
-
-},
-
-{
-
-"totalCardsWarning":  0
-
-},
-
-{
-
-"totalCardsDelayed":  0
-
-},
-
-{
-
-"Cards per page":  1,
-
-"Page":  2
-
-}
-
+   {
+      "card 15":{
+         "daysSinceCreated":0,
+         "slaStatus":"OK",
+         "patientid":1,
+         "patientname":"Patient1",
+         "healthInsuranceid":4,
+         "healthInsuranceName":"Unimed",
+         "visitId":15,
+         "billid":9,
+         "billtype":"Hospitalar",
+         "totalAmount":50000.0,
+         "numberOfPendencies":4,
+         "numberOfOpenPendencies":4,
+         "numberOfDocuments":4,
+         "numberOfNotReceivedDocuments":2,
+         "numberOfChecklistItem":4,
+         "numberOfDoneChecklistItem":3
+      }
+   },
+   {
+      "totalCardsOk":1
+   },
+   {
+      "totalCardsWarning":0
+   },
+   {
+      "totalCardsDelayed":0
+   },
+   {
+      "Cards per page":1,
+      "Page":2
+   }
 ]
 ```
 - Create Card (POST): http://localhost:8080/cards/createcard({patientId},{healthinsuranceid},{billtype},{billtotalamount},{activityid})
@@ -615,73 +359,39 @@
 
 ```json
 [
-
-{
-
-"card 17":  {
-
-"daysSinceCreated":  0,
-
-"slaStatus":  "OK",
-
-"patientid":  3,
-
-"patientname":  "PatientThree",
-
-"healthInsuranceid":  5,
-
-"healthInsuranceName":  "porto seguro",
-
-"visitId":  17,
-
-"billid":  16,
-
-"billtype":  "Ambulatorial",
-
-"totalAmount":  999.5,
-
-"numberOfPendencies":  0,
-
-"numberOfOpenPendencies":  0,
-
-"numberOfDocuments":  0,
-
-"numberOfNotReceivedDocuments":  0,
-
-"numberOfChecklistItem":  0,
-
-"numberOfDoneChecklistItem":  0
-
-}
-
-},
-
-{
-
-"totalCardsOk":  1
-
-},
-
-{
-
-"totalCardsWarning":  0
-
-},
-
-{
-
-"totalCardsDelayed":  0
-
-},
-
-{
-
-"Cards per page":  10,
-
-"Page":  1
-
-}
-
+   {
+      "card 18":{
+         "daysSinceCreated":0,
+         "slaStatus":"OK",
+         "patientid":3,
+         "patientname":"PatientThree",
+         "healthInsuranceid":5,
+         "healthInsuranceName":"porto seguro",
+         "visitId":18,
+         "billid":17,
+         "billtype":"Ambulatorial",
+         "totalAmount":999.5,
+         "numberOfPendencies":0,
+         "numberOfOpenPendencies":0,
+         "numberOfDocuments":0,
+         "numberOfNotReceivedDocuments":0,
+         "numberOfChecklistItem":0,
+         "numberOfDoneChecklistItem":0
+      }
+   },
+   {
+      "totalCardsOk":1
+   },
+   {
+      "totalCardsWarning":0
+   },
+   {
+      "totalCardsDelayed":0
+   },
+   {
+      "Cards per page":10,
+      "Page":1
+   }
 ]
 ```
 
