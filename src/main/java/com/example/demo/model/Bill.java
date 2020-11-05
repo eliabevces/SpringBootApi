@@ -25,14 +25,17 @@ public class Bill {
 	
 
 	
-	
+	//default constructor
 	public Bill() {}
-
+	
+	//constructor
 	public Bill(String billtype, Double totalamount) {
 		this.billtype = billtype;
 		this.totalamount = totalamount;
 	}
 	
+
+	//getters and setters
 	public int getBillid() {
 		return billid;
 	}

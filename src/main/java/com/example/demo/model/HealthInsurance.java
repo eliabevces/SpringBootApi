@@ -20,12 +20,17 @@ public class HealthInsurance {
     private List<Card> cards;	//Cards that belong to certain Health Insurance
 	
 	
-	 
+	//default constructor
+	
+	
 	public HealthInsurance() {}
 	
+	//constructor
 	public HealthInsurance(String name) {
 		this.name = name;
 	}
+	
+	//getters and setters
 	public int getHealthInsuranceId() {
 		return healthInsuranceId;
 	}

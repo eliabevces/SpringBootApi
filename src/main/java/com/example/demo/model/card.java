@@ -1,19 +1,16 @@
 package com.example.demo.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.HashMap;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.CreationTimestamp;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -39,10 +36,8 @@ public class Card {
 	@JoinColumn(name = "bill_id")
 	private Bill bill;	// Card bill
 	
-	@CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_at", nullable = false)
-	private Date CreatedIn;	// date that the card was created
+
+	private LocalDate CreatedIn;	// date that the card was created
 	
 	@ManyToOne
 	@JsonIgnore
@@ -58,9 +53,10 @@ public class Card {
 	private HashMap<String,Boolean> pendencies;	// Boolean indicates if the pendency is done and String is the description of the pendency
 	
 	
-
+	//default constructor
 	public Card() {}
 
+	//constructor
 	public Card(Patient patient, HealthInsurance healthinsurance, Bill bill, Activity activity,
 			HashMap<String,Boolean> checklist, HashMap<String,Boolean> documents,HashMap<String,Boolean> pendencies) {
 
@@ -71,11 +67,12 @@ public class Card {
 		this.checklist = checklist;
 		this.documents = documents;
 		this.pendencies = pendencies;
+		this.CreatedIn = LocalDate.now();
 	}
 
 
 
-
+	//getters and setters
 	public int getVisitId() {
 		return visitId;
 	}
@@ -121,13 +118,13 @@ public class Card {
 	}
 
 
-	public Date getCreatedIn() {
+	public LocalDate getCreatedIn() {
 		return CreatedIn;
 	}
 
 
 
-	public void setCreatedIn(Date createdIn) {
+	public void setCreatedIn(LocalDate createdIn) {
 		CreatedIn = createdIn;
 	}
 
@@ -165,11 +162,7 @@ public class Card {
 		this.pendencies = pendencies;
 	}
 
-	@Override
-	public String toString() {
-		return "Card [visitId=" + visitId + ", patient=" + patient.getPatientId() + ", healthinsurance=" + healthinsurance + ", bill="
-				+ bill + ", CreatedIn=" + CreatedIn + ", activity=" + activity + "]";
-	}
+
 
 
 }

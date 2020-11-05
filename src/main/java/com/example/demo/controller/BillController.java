@@ -17,6 +17,7 @@ public class BillController {
 	@Autowired
 	Billrepo BillRepository;
 	
+	//get all bills endpoint
 	@GetMapping(produces = "application/json")
 	public List<Bill> getBills() 
 	{

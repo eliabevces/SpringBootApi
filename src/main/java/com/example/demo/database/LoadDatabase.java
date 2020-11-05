@@ -20,6 +20,8 @@ import com.example.demo.repo.Cardrepo;
 import com.example.demo.repo.HealthInsurancerepo;
 import com.example.demo.repo.Patientrepo;
 
+
+//database example
 @Configuration
 public class LoadDatabase {
 	

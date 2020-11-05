@@ -22,14 +22,15 @@ public class Patient {
     @OneToMany(mappedBy = "patient") //bidirectinal relation
     private List<Card> cards;
 	
-    
+	//default constructor
     public Patient() {}
-	
+    
+	//constructor
 	public Patient(String name) {
 		this.name = name;
 	}
 	
-	
+	//getters and setters
 	public int getPatientId() {
 		return patientId;
 	}

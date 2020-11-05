@@ -19,13 +19,14 @@ public class ActivityController {
 	@Autowired
 	Activityrepo ActivityRepository;
 	
+	//get all activities endpoint
 	@GetMapping(produces = "application/json")
 	public List<Activity> getActivities() 
 	{
 	    return ActivityRepository.findAll();
 	} 
 	 
-	
+	//create Activity endpoint
 	@PostMapping(path="/createactivity({activityTitle},{activitySubtitle},{sla})")
 	public void CreateActivity(@PathVariable String activityTitle,@PathVariable String activitySubtitle,@PathVariable int sla) {
 		Activity act = new Activity(activityTitle, activitySubtitle, sla);

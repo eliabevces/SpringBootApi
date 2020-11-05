@@ -19,6 +19,7 @@ public class HealthInsuranceController {
 	@Autowired
 	HealthInsurancerepo HealthInsuranceRepository;
 	
+	//get all health insurances endpoint
 	@GetMapping(produces = "application/json")
 	public List<HealthInsurance> getHealthInsurances() 
 	{

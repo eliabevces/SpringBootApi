@@ -5,6 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.example.demo.model.Card;
 
+//Card repository
 @RepositoryRestResource(collectionResourceRel = "Cards", path = "cards")
 public interface Cardrepo extends JpaRepository<Card, Integer>
 {

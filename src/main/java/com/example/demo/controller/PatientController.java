@@ -17,6 +17,7 @@ public class PatientController {
 	@Autowired
 	Patientrepo PatientRepository;
 	
+	//get all patients endpoint
 	@GetMapping(produces = "application/json")
 	public List<Patient> getPatients() 
 	{

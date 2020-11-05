@@ -5,6 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.example.demo.model.Bill;
 
+//Bill repository
 @RepositoryRestResource(collectionResourceRel = "Bills", path = "bills")
 public interface Billrepo extends JpaRepository<Bill, Integer>{
 

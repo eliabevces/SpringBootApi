@@ -1,14 +1,16 @@
 package com.example.demo.model;
 
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 
 
 
-
+// the CardData class is only created to organize the getCards endpoint results
 public class CardData {
 
-	private int daysSinceCreated;
+	private long daysSinceCreated;
 	private String slaStatus;
 	private int patientid;
 	private String patientname;
@@ -25,6 +27,7 @@ public class CardData {
 	private int numberOfChecklistItem;
 	private int numberOfDoneChecklistItem;
 	
+	//constructor
 	public CardData(Card card) {
 		Activity activity = card.getActivity();
 		Patient patient = card.getPatient();
@@ -34,18 +37,10 @@ public class CardData {
 		HashMap<String,Boolean> documents = card.getDocuments();
 		HashMap<String,Boolean> checklist = card.getChecklist();
 		
-		//Date currentDate = new Date();
-		//Date cardDate = card.getCreatedIn();
-		//System.out.println(currentDate);
-		//System.out.println(cardDate);
-		//System.out.println(currentDate.compareTo(cardDate));
-		//System.out.println(cardDate.compareTo(currentDate));
-		//this.daysSinceCreated = cardDate.compareTo(currentDate);
-		//have to fix date
+		LocalDate currentDate = LocalDate.now();
+		LocalDate cardDate = card.getCreatedIn();
+		this.daysSinceCreated = ChronoUnit.DAYS.between(cardDate, currentDate);
 		
-		
-		this.daysSinceCreated = 14;
-
 		double slastatus = (double)daysSinceCreated/(double)activity.getSla();
 		
 		if(slastatus < 0.75) //check sla status
@@ -91,10 +86,6 @@ public class CardData {
 		
 
 	}
-	
-//	public int daysBetween(Date d1, Date d2){
-//        return (int)( (d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
-//	}
 
 	
 	//this method returns a submap with only the pairs who have the value = false
@@ -107,11 +98,14 @@ public class CardData {
 		
 	}
 
-	public int getDaysSinceCreated() {
+	
+
+	//getters and setters
+	public long getDaysSinceCreated() {
 		return daysSinceCreated;
 	}
 
-	public void setDaysSinceCreated(int daysSinceCreated) {
+	public void setDaysSinceCreated(long daysSinceCreated) {
 		this.daysSinceCreated = daysSinceCreated;
 	}
 
