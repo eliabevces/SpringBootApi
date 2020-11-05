@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.Activity;
 import com.example.demo.model.Bill;
 import com.example.demo.model.Card;
+import com.example.demo.model.CardData;
 import com.example.demo.model.Patient;
 import com.example.demo.repo.Cardrepo;
+
+import net.minidev.json.JSONObject;
 
 @RestController
 @RequestMapping(path = "/cards")
@@ -25,20 +30,96 @@ public class CardController {
 	Cardrepo CardRepository;
 	
 	@GetMapping(path = "/searchcards({activityid},{q},{qvalue},{filter},{page},{perpage})",produces = "application/json")
-	public List<Card> getCards(@PathVariable int activityid,@PathVariable String q,@PathVariable String qvalue,@PathVariable String filter,
+	public  ResponseEntity<Object> getCards(@PathVariable int activityid,@PathVariable String q,@PathVariable String qvalue,@PathVariable String filter,
 			@PathVariable int page,@PathVariable int perpage) 
 	{
+		List<JSONObject> entities = new ArrayList<JSONObject>();
+		List<Card> list;
+		JSONObject entity = new JSONObject();
+		JSONObject cardsOk = new JSONObject();
+		JSONObject cardsWarning = new JSONObject();
+		JSONObject cardsDelayed = new JSONObject();
+		int totalCardsOk = 0;
+		int totalCardsWarning = 0;
+		int totalCardsDelayed = 0;
+		
 		switch(q) {
 			case "patientName":
-				return searchByPatientName(qvalue, filter, page, perpage);
+				list = searchByPatientName(qvalue, filter, page, perpage);
+				for(Card card : list) {
+					CardData cardData = new CardData(card);
+					entity.put("card "+card.getVisitId(), cardData);
+					if(cardData.getSlaStatus()=="OK") totalCardsOk++;
+					if(cardData.getSlaStatus()=="WARNING") totalCardsWarning++;
+					if(cardData.getSlaStatus()=="DELAYED") totalCardsDelayed++;
+				}
+				cardsOk.put("totalCardsOk", totalCardsOk);
+				cardsWarning.put("totalCardsWarning", totalCardsWarning);
+				cardsDelayed.put("totalCardsDelayed", totalCardsDelayed);
+	            entities.add(entity);
+	            entities.add(cardsOk);
+	            entities.add(cardsWarning);
+	            entities.add(cardsDelayed);
+	            return new ResponseEntity<Object>(entities, HttpStatus.OK);
+	            
+	            
 			case "visitId ":
 				int visitid = Integer.parseInt(qvalue); 
-				return searchByVisitid(visitid, filter, page, perpage);
+				list = searchByVisitid(visitid, filter, page, perpage);
+				for(Card card : list) {
+					CardData cardData = new CardData(card);
+					entity.put("card "+card.getVisitId(), cardData);
+					if(cardData.getSlaStatus()=="OK") totalCardsOk++;
+					if(cardData.getSlaStatus()=="WARNING") totalCardsWarning++;
+					if(cardData.getSlaStatus()=="DELAYED") totalCardsDelayed++;
+				}
+				cardsOk.put("totalCardsOk", totalCardsOk);
+				cardsWarning.put("totalCardsWarning", totalCardsWarning);
+				cardsDelayed.put("totalCardsDelayed", totalCardsDelayed);
+	            entities.add(entity);
+	            entities.add(cardsOk);
+	            entities.add(cardsWarning);
+	            entities.add(cardsDelayed);
+	            return new ResponseEntity<Object>(entities, HttpStatus.OK);
+	            
+	           
 			case "billId":
 				int billid = Integer.parseInt(qvalue); 
-				return searchBybillid(billid, filter, page, perpage);
+				list = searchBybillid(billid, filter, page, perpage);
+				for(Card card : list) {
+					CardData cardData = new CardData(card);
+					entity.put("card "+card.getVisitId(), cardData);
+					if(cardData.getSlaStatus()=="OK") totalCardsOk++;
+					if(cardData.getSlaStatus()=="WARNING") totalCardsWarning++;
+					if(cardData.getSlaStatus()=="DELAYED") totalCardsDelayed++;
+				}
+				cardsOk.put("totalCardsOk", totalCardsOk);
+				cardsWarning.put("totalCardsWarning", totalCardsWarning);
+				cardsDelayed.put("totalCardsDelayed", totalCardsDelayed);
+	            entities.add(entity);
+	            entities.add(cardsOk);
+	            entities.add(cardsWarning);
+	            entities.add(cardsDelayed);
+	            return new ResponseEntity<Object>(entities, HttpStatus.OK);
+	            
+	            
 			default:
-				return searchByactivityid(activityid, filter, page, perpage);
+				list = searchByactivityid(activityid, filter, page, perpage);
+				for(Card card : list) {
+					CardData cardData = new CardData(card);
+					entity.put("card "+card.getVisitId(), cardData);
+					if(cardData.getSlaStatus()=="OK") totalCardsOk++;
+					if(cardData.getSlaStatus()=="WARNING") totalCardsWarning++;
+					if(cardData.getSlaStatus()=="DELAYED") totalCardsDelayed++;
+				}
+				cardsOk.put("totalCardsOk", totalCardsOk);
+				cardsWarning.put("totalCardsWarning", totalCardsWarning);
+				cardsDelayed.put("totalCardsDelayed", totalCardsDelayed);
+	            entities.add(entity);
+	            entities.add(cardsOk);
+	            entities.add(cardsWarning);
+	            entities.add(cardsDelayed);
+	            return new ResponseEntity<Object>(entities, HttpStatus.OK);
 		}	
 	}
 	
@@ -50,7 +131,7 @@ public class CardController {
 				for(Card card : allcards){
 					Patient patient = card.getPatient();
 					HashMap<String,Boolean> documents = card.getDocuments();
-					if(patient.getName() == patientName && documents.containsValue(false)) {
+					if(patient.getName().toUpperCase().equals(patientName.toUpperCase()) && documents.containsValue(false)) {
 					//it checks if theres any unreceived document
 						returncards.add(card);
 					}
@@ -64,17 +145,16 @@ public class CardController {
 					HashMap<String,Boolean> checklist = card.getChecklist();
 					HashMap<String,Boolean> pendencies = card.getPendencies();
 					
-					if(patient.getName() == patientName && !(documents.containsValue(false)) && !(checklist.containsValue(false)) && !(pendencies.containsValue(false)) ) {
+					if(patient.getName().toUpperCase().equals(patientName.toUpperCase()) && !(documents.containsValue(false)) && !(checklist.containsValue(false)) && !(pendencies.containsValue(false)) ) {
 					// it checks if all documents, checkitens and pendencies are done
 						returncards.add(card);
 					}
 				}
 				return returncards;
 			default:
-				
 				for(Card card : allcards){
 					Patient patient = card.getPatient();
-					if(patient.getName() == patientName) {
+					if(patient.getName().toUpperCase().equals(patientName.toUpperCase())) {
 						returncards.add(card);
 					}
 				}

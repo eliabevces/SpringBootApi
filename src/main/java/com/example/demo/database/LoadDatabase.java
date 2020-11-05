@@ -26,9 +26,9 @@ public class LoadDatabase {
 	@Bean
 	CommandLineRunner initDatabase( Activityrepo activityrepository, Billrepo billrepository, Cardrepo cardrepository, HealthInsurancerepo healthInsurancerepository, Patientrepo patientrepository) {
 		 return args -> {
-			 Patient patient1 = new Patient("Patient 1");
-			 Patient patient2 = new Patient("Patient 2");
-			 Patient patient3 = new Patient("Patient Three");
+			 Patient patient1 = new Patient("Patient1");
+			 Patient patient2 = new Patient("Patient2");
+			 Patient patient3 = new Patient("PatientThree");
 			 
 			 List<Patient> patients = Arrays.asList(patient1, patient2, patient3);
 			 
@@ -116,7 +116,7 @@ public class LoadDatabase {
 			 pendencies3.put("pendency 3", false);
 			 pendencies3.put("pendency 4", false);
 			 
-			 Card card1 = new Card(patient1,hi1,bill1,act2,cheklist1,documents1,pendencies1);
+			 Card card1 = new Card(patient1,hi1,bill1,act3,cheklist1,documents1,pendencies1);
 			 
 			 Card card2 = new Card(patient2,hi3,bill2,act2,cheklist2,documents2,pendencies2);
 
